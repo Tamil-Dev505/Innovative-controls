@@ -523,13 +523,13 @@ const ContactSection = () => {
             }}
           >
             <iframe
-              title="Company Location"
+              title="Company Location - Coimbatore"
               width="100%"
               height="400"
               style={{ border: 0, display: "block" }}
               loading="lazy"
               allowFullScreen
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.0000000000005!2d76.9629!3d11.0086!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba859a5c5c5c5c5%3A0x0!2sCoimbatore%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1234567890"
+              src="https://www.google.com/maps?q=Coimbatore,+Tamil+Nadu,+India&z=13&output=embed"
             ></iframe>
           </MotionBox>
         </motion.div>
