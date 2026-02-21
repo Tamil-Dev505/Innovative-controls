@@ -61,7 +61,7 @@ const AIEnergySection = () => {
   return (
     <Box
       sx={{
-        py: { xs: 8, md: 14 },
+        py: { xs: 4, md: 8 },
         px: { xs: 2, md: 6 },
         background: "linear-gradient(135deg, #0B1220 0%, #1A2332 100%)",
         color: "white",
@@ -117,10 +117,10 @@ const AIEnergySection = () => {
         }}
       />
 
-      <Grid container spacing={{ xs: 4, md: 10 }} alignItems="center" position="relative" zIndex={1}>
+      <Grid container spacing={{ xs: 2, md: 6 }} alignItems="center" position="relative" zIndex={1}>
         
         {/* LEFT CONTENT */}
-        <Grid item xs={12} md={6}>
+        <Grid item xs={12} md={12}>
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -236,21 +236,21 @@ const AIEnergySection = () => {
         </Grid>
 
         {/* RIGHT GRID FEATURES */}
-        <Grid item xs={12} md={6}>
+        <Grid item xs={12} md={12}>
           <motion.div
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
           >
-            <Grid container spacing={3}>
+            <Grid container spacing={1}>
               {features.map((item, index) => (
-                <Grid item xs={12} sm={6} key={index}>
+                <Grid item xs={12} sm={6} md={3} key={index}>
                   <motion.div variants={itemVariants}>
                     <Paper
                       elevation={0}
                       sx={{
-                        p: 3.5,
+                        p: 2,
                         borderRadius: "16px",
                         background: "rgba(255,255,255,0.05)",
                         border: "1px solid rgba(255,255,255,0.1)",
@@ -273,8 +273,8 @@ const AIEnergySection = () => {
                         },
                         "&:hover": {
                           borderColor: item.color,
-                          transform: "translateY(-8px)",
-                          boxShadow: `0 20px 40px ${item.color}20`,
+                          transform: "translateY(-6px)",
+                          boxShadow: `0 12px 28px ${item.color}20`,
                           background: "rgba(255,255,255,0.08)",
                         },
                       }}
@@ -283,20 +283,17 @@ const AIEnergySection = () => {
                       <motion.div
                         animate={{ scale: [1, 1.15, 1] }}
                         transition={{ duration: 2.5, repeat: Infinity, delay: index * 0.3 }}
-                        style={{
-                          display: "inline-block",
-                          marginBottom: "1rem",
-                        }}
+                        style={{ display: "inline-block", marginBottom: "0.75rem" }}
                       >
                         <Box
                           sx={{
                             color: item.color,
-                            fontSize: "2.5rem",
+                            fontSize: "1.6rem",
                             display: "flex",
                             alignItems: "center",
                             justifyContent: "center",
-                            width: "60px",
-                            height: "60px",
+                            width: "48px",
+                            height: "48px",
                             borderRadius: "12px",
                             background: `${item.color}15`,
                             transition: "all 0.3s ease",
@@ -306,25 +303,11 @@ const AIEnergySection = () => {
                         </Box>
                       </motion.div>
 
-                      <Typography
-                        sx={{
-                          fontWeight: 700,
-                          fontSize: "1.05rem",
-                          mb: 1.5,
-                          color: "white",
-                        }}
-                      >
+                      <Typography sx={{ fontWeight: 700, fontSize: "0.98rem", mb: 1.25, color: "white" }}>
                         {item.title}
                       </Typography>
 
-                      <Typography
-                        sx={{
-                          opacity: 0.8,
-                          fontSize: "0.9rem",
-                          lineHeight: 1.6,
-                          color: "#CBD5E1",
-                        }}
-                      >
+                      <Typography sx={{ opacity: 0.85, fontSize: "0.86rem", lineHeight: 1.5, color: "#CBD5E1" }}>
                         {item.desc}
                       </Typography>
                     </Paper>

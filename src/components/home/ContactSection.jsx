@@ -305,6 +305,26 @@ const ContactSection = () => {
                   boxShadow: "0 20px 60px rgba(0, 0, 0, 0.08)",
                   position: "relative",
                   zIndex: 2,
+                  // make all descendant outlined TextField inputs show full borders
+                  "& .MuiOutlinedInput-root": {
+                    backgroundColor: "#ffffff",
+                    borderRadius: "8px",
+                    "& fieldset": {
+                      borderColor: "#E5E7EB",
+                      borderWidth: "1px",
+                      borderStyle: "solid",
+                    },
+                    "&:hover fieldset": {
+                      borderColor: "#3B82F6",
+                    },
+                    "&.Mui-focused fieldset": {
+                      borderColor: "#3B82F6",
+                      borderWidth: "1px",
+                    },
+                  },
+                  "& .MuiInputBase-input": {
+                    color: "#111827",
+                  },
                 }}
               >
                 <Typography
@@ -386,7 +406,7 @@ const ContactSection = () => {
 
                   <TextField
                     fullWidth
-                    label="Email Address"
+                    placeholder="Email Address"
                     name="email"
                     type="email"
                     value={formData.email}
@@ -411,6 +431,9 @@ const ContactSection = () => {
                           borderColor: "#3B82F6",
                         },
                       },
+                      "& .MuiOutlinedInput-notchedOutline": {
+                        borderColor: "#E5E7EB",
+                      },
                       "& .MuiInputBase-input": {
                         color: "#111827",
                       },
@@ -419,7 +442,7 @@ const ContactSection = () => {
 
                   <TextField
                     fullWidth
-                    label="Phone Number"
+                    placeholder="Phone Number"
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
@@ -443,6 +466,9 @@ const ContactSection = () => {
                           borderColor: "#3B82F6",
                         },
                       },
+                      "& .MuiOutlinedInput-notchedOutline": {
+                        borderColor: "#E5E7EB",
+                      },
                       "& .MuiInputBase-input": {
                         color: "#111827",
                       },
@@ -453,7 +479,7 @@ const ContactSection = () => {
                     fullWidth
                     multiline
                     rows={4}
-                    label="Project Requirement"
+                    placeholder="Project Requirement"
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
@@ -475,6 +501,9 @@ const ContactSection = () => {
                         "&:hover fieldset": {
                           borderColor: "#3B82F6",
                         },
+                      },
+                      "& .MuiOutlinedInput-notchedOutline": {
+                        borderColor: "#E5E7EB",
                       },
                       "& .MuiInputBase-input": {
                         color: "#111827",

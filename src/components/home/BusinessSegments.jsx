@@ -88,7 +88,7 @@ const BusinessSegments = () => {
   return (
     <Box
       sx={{
-        py: { xs: 8, md: 14 },
+        py: { xs: 4, md: 8 },
         px: { xs: 2, md: 4 },
         background: "linear-gradient(135deg, #0A0E27 0%, #1a1f3a 50%, #0D1B2A 100%)",
         position: "relative",
@@ -184,7 +184,7 @@ const BusinessSegments = () => {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <Box sx={{ textAlign: "center", mb: { xs: 6, md: 10 } }}>
+          <Box sx={{ textAlign: "center", mb: { xs: 4, md: 6 } }}>
             <Typography
               sx={{
                 fontSize: { xs: "28px", md: "42px" },
@@ -231,7 +231,7 @@ const BusinessSegments = () => {
           whileInView="visible"
           viewport={{ once: true }}
         >
-          <Grid container spacing={{ xs: 2, md: 2.5 }}>
+          <Grid container spacing={{ xs: 1, md: 2 }} justifyContent="center">
             {
               // Ensure a 3x3 layout: fill with placeholders if fewer than 9 items
             }
@@ -242,22 +242,23 @@ const BusinessSegments = () => {
                 if (!item) {
                   // Placeholder cell to keep 3x3 layout
                   return (
-                    <Grid item xs={12} sm={6} md={4} key={index} sx={{ display: 'flex' }}>
+                    <Grid item xs={12} sm={6} md={4} key={index} sx={{ display: 'flex', justifyContent: 'center' }}>
                       <motion.div variants={itemVariants}>
                         <Box
                           sx={{
-                            p: { xs: 2, md: 3 },
-                            borderRadius: "16px",
-                            border: "1px dashed rgba(255,255,255,0.04)",
-                            background: "transparent",
-                            minHeight: { xs: 150, md: 180 },
-                            display: "flex",
-                            alignItems: "center",
-                            justifyContent: "center",
-                            opacity: 0.06,
-                            pointerEvents: "none",
-                            flex: 1,
-                          }}
+                              p: { xs: 1.5, md: 2 },
+                              borderRadius: "16px",
+                              border: "1px dashed rgba(255,255,255,0.04)",
+                              background: "transparent",
+                              minHeight: { xs: 120, md: 140 },
+                              display: "flex",
+                              alignItems: "center",
+                              justifyContent: "center",
+                              opacity: 0.06,
+                              pointerEvents: "none",
+                              width: "100%",
+                              maxWidth: { xs: '100%', md: 420 },
+                            }}
                         />
                       </motion.div>
                     </Grid>
@@ -265,11 +266,11 @@ const BusinessSegments = () => {
                 }
                 const Icon = item.icon;
                 return (
-                  <Grid item xs={12} sm={6} md={4} key={index} sx={{ display: 'flex' }}>
+                  <Grid item xs={12} sm={6} md={4} key={index} sx={{ display: 'flex', justifyContent: 'center' }}>
                     <motion.div variants={itemVariants}>
                       <Box
                         sx={{
-                          p: { xs: 2.5, md: 3 },
+                          p: { xs: 1.75, md: 2.5 },
                           borderRadius: "16px",
                           background: `linear-gradient(135deg, ${item.bgColor} 0%, rgba(66, 165, 245, 0.04) 100%)`,
                           border: `1px solid ${item.borderColor}`,
@@ -281,8 +282,9 @@ const BusinessSegments = () => {
                           display: "flex",
                           flexDirection: "column",
                           alignItems: "flex-start",
-                          flex: 1,
-                          minHeight: { xs: 150, md: 180 },
+                          width: "100%",
+                          maxWidth: { xs: '100%', md: 420 },
+                          minHeight: { xs: 120, md: 140 },
                           "&::before": {
                             content: '""',
                             position: "absolute",
@@ -423,7 +425,7 @@ const BusinessSegments = () => {
         >
           <Box
             sx={{
-              mt: { xs: 8, md: 12 },
+              mt: { xs: 4, md: 6 },
               p: { xs: 3, md: 5 },
               borderRadius: "16px",
               background: "linear-gradient(135deg, rgba(30, 136, 229, 0.1) 0%, rgba(66, 165, 245, 0.05) 100%)",

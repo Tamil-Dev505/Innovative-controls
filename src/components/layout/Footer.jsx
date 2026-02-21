@@ -95,66 +95,63 @@ const Footer = () => {
         }}
       />
 
-      <Container maxWidth={false} sx={{ position: "relative", zIndex: 1, py: { xs: 3, md: 5 }, px: { xs: 3, md: 6 } }}>
+      <Container maxWidth={false} sx={{ position: "relative", zIndex: 1, py: { xs: 4, md: 8 }, px: 0 }}>
         <motion.div variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}>
-          <Grid container spacing={{ xs: 2, md: 2.5 }} sx={{ mb: 1.5, width: "100%" }} justifyContent="space-between" alignItems="flex-start">
-            <Grid item xs={12} md={3}>
+            {/* Top row: logo + tagline only (other top columns removed per request) */}
+            <Grid container spacing={{ xs: 2, md: 2 }} sx={{ mb: 1.5, width: "100%" }} alignItems="center">
+              <Grid item xs={12} md={12} sx={{ px: { xs: 2, md: 6 } }}>
+                <MotionBox variants={itemVariants} sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
+                  <Box component="img" src="/logo.png" alt="Innovative Controls" sx={{ width: { xs: '140px', md: '220px' }, mb: 0 }} />
+                  <Typography sx={{ color: "#D1D5DB", fontSize: "1rem" }}>
+                    Delivering intelligent automation, AI-driven systems, and energy management solutions.
+                  </Typography>
+                </MotionBox>
+              </Grid>
+            </Grid>
+
+          {/* Bottom row: column content (evenly spaced, left-aligned on md+) */}
+          <Grid container spacing={{ xs: 2, md: 2 }} sx={{ mb: 1.5, width: "100%" }} alignItems="flex-start" justifyContent={{ xs: 'center', md: 'space-between' }}>
+            <Grid item xs={12} md={3} sx={{ px: { xs: 2, md: 6 }, display: 'flex', flexDirection: 'column', alignItems: { xs: 'center', md: 'flex-start' }, textAlign: { xs: 'center', md: 'left' } }}>
               <MotionBox variants={itemVariants}>
-                <MotionTypography
-                  sx={{
-                    fontSize: { xs: "1.25rem", md: "1.6rem" },
-                    fontWeight: 800,
-                    mb: 1,
-                    background: "linear-gradient(135deg, #3B82F6 0%, #60A5FA 100%)",
-                    backgroundClip: "text",
-                    WebkitBackgroundClip: "text",
-                    WebkitTextFillColor: "transparent",
-                  }}
-                >
-                  Innovative Controls
-                </MotionTypography>
-
-                <Typography sx={{ opacity: 0.9, lineHeight: 1.6, fontSize: "1rem", color: "#D1D5DB", mb: 1 }}>
-                  Delivering intelligent automation, AI-driven systems, and energy management solutions to transform industrial operations into smart, efficient ecosystems.
-                </Typography>
-
-                <Box sx={{ display: "flex", gap: 1.25 }}>
+                <Typography sx={{ fontWeight: 700, mb: 1.5, fontSize: "1.125rem", color: "#F3F4F6" }}>Contact</Typography>
+                <Typography sx={{ color: "#D1D5DB", mb: 1, fontSize: "1rem" }}>123 Industrial Park, Suite 4B</Typography>
+                <Typography sx={{ color: "#D1D5DB", mb: 0.5, fontSize: "1rem" }}>Phone: +1 (555) 123-4567</Typography>
+                <Typography sx={{ color: "#D1D5DB", fontSize: "1rem" }}>Email: info@innovativecontrols.com</Typography>
+                <Box sx={{ display: "flex", gap: 1.5, mt: 2, justifyContent: { xs: 'center', md: 'flex-start' } }}>
                   {socialIcons.map(({ Icon, label, color }) => (
                     <MotionBox
                       key={label}
-                      whileHover={{ scale: 1.15 }}
+                      whileHover={{ scale: 1.08 }}
                       whileTap={{ scale: 0.95 }}
                       sx={{
-                        width: { xs: "34px", md: "40px" },
-                        height: { xs: "34px", md: "40px" },
+                        width: { xs: "38px", md: "46px" },
+                        height: { xs: "38px", md: "46px" },
                         borderRadius: "50%",
-                        background: "rgba(255, 255, 255, 0.06)",
+                        background: "rgba(255, 255, 255, 0.04)",
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
                         cursor: "pointer",
                         transition: "all 0.25s ease",
-                        border: "1px solid rgba(255, 255, 255, 0.08)",
-                        "&:hover": {
-                          background: color,
-                        },
+                        border: "1px solid rgba(255, 255, 255, 0.06)",
+                        "&:hover": { background: color },
                       }}
                     >
-                      <Icon size={18} />
+                      <Icon size={20} />
                     </MotionBox>
                   ))}
                 </Box>
               </MotionBox>
             </Grid>
 
-            <Grid item xs={6} md={3}>
+            <Grid item xs={12} md={3} sx={{ px: { xs: 2, md: 4 }, display: 'flex', flexDirection: 'column', alignItems: { xs: 'center', md: 'flex-start' }, textAlign: { xs: 'center', md: 'left' } }}>
               <MotionBox variants={itemVariants}>
-                <Typography sx={{ fontWeight: 700, mb: 1.5, fontSize: "1rem", color: "#F3F4F6", textTransform: "uppercase", letterSpacing: "0.5px" }}>
-                  Quick Links
-                </Typography>
+                  <Typography sx={{ fontWeight: 700, mb: 1.5, fontSize: "1.125rem", color: "#F3F4F6", textTransform: "uppercase", letterSpacing: "0.5px" }}>QUICK LINKS</Typography>
                 {[
                   "Home",
                   "About Us",
+                  "Business",
+                  "AI Energy",
                   "Industries",
                   "Projects",
                   "Contact",
@@ -166,11 +163,9 @@ const Footer = () => {
               </MotionBox>
             </Grid>
 
-            <Grid item xs={6} md={3}>
+            <Grid item xs={12} md={3} sx={{ px: { xs: 2, md: 4 }, display: 'flex', flexDirection: 'column', alignItems: { xs: 'center', md: 'flex-start' }, textAlign: { xs: 'center', md: 'left' } }}>
               <MotionBox variants={itemVariants}>
-                <Typography sx={{ fontWeight: 700, mb: 1.5, fontSize: "1rem", color: "#F3F4F6", textTransform: "uppercase", letterSpacing: "0.5px" }}>
-                  Solutions
-                </Typography>
+                    <Typography sx={{ fontWeight: 700, mb: 1.5, fontSize: "1.125rem", color: "#F3F4F6", textTransform: "uppercase", letterSpacing: "0.5px" }}>SOLUTIONS</Typography>
                 {[
                   "Process Automation",
                   "Machine Automation",
@@ -185,10 +180,25 @@ const Footer = () => {
               </MotionBox>
             </Grid>
 
-            {/* intentionally no contact column here; contact moved to ContactSection */}
+            <Grid item xs={12} md={3} sx={{ px: { xs: 2, md: 6 }, display: 'flex', flexDirection: 'column', alignItems: { xs: 'center', md: 'flex-start' }, textAlign: { xs: 'center', md: 'left' } }}>
+              <MotionBox variants={itemVariants}>
+                    <Typography sx={{ fontWeight: 700, mb: 1.5, fontSize: "1.125rem", color: "#F3F4F6", textTransform: "uppercase", letterSpacing: "0.5px" }}>NEWSLETTER</Typography>
+
+                <Typography sx={{ color: "#D1D5DB", mb: 2, fontSize: "0.95rem" }}>
+                  Subscribe to our newsletter for updates and insights.
+                </Typography>
+
+                <Box component="form" onSubmit={(e)=>e.preventDefault()} sx={{ display: 'flex', gap: 1, alignItems: 'center', width: '100%', flexDirection: { xs: 'column', md: 'row' } }}>
+                  <Box component="input" type="email" placeholder="Your email" aria-label="email" sx={{ flex: 1, width: '100%', p: { xs: '10px 12px', md: '12px 14px' }, borderRadius: '8px', border: '1px solid rgba(255,255,255,0.12)', background: 'transparent', color: '#D1D5DB' }} />
+                  <Box component="button" type="submit" sx={{ px: 3, py: 1, mt: { xs: 1, md: 0 }, background: 'linear-gradient(135deg, #3B82F6 0%, #60A5FA 100%)', color: '#fff', borderRadius: '8px', border: 'none', cursor: 'pointer', whiteSpace: 'nowrap' }}>
+                    Subscribe
+                  </Box>
+                </Box>
+              </MotionBox>
+            </Grid>
           </Grid>
 
-          <Divider sx={{ background: "rgba(255, 255, 255, 0.08)", my: 2 }} />
+          <Divider sx={{ background: "rgba(255, 255, 255, 0.08)", my: 3 }} />
 
           <MotionBox variants={itemVariants} sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 1 }}>
             <Typography sx={{ opacity: 0.7, fontSize: "0.9rem", color: "#9CA3AF" }}>
