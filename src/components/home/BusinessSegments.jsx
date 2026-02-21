@@ -231,58 +231,87 @@ const BusinessSegments = () => {
           whileInView="visible"
           viewport={{ once: true }}
         >
-          <Grid container spacing={{ xs: 2.5, md: 3 }}>
-            {segments.map((item, index) => {
-              const Icon = item.icon;
-              return (
-                <Grid item xs={12} sm={6} md={4} key={index}>
-                  <motion.div variants={itemVariants}>
-                    <Box
-                      sx={{
-                        h: "100%",
-                        p: { xs: 3.5, md: 4.5 },
-                        borderRadius: "16px",
-                        background: `linear-gradient(135deg, ${item.bgColor} 0%, rgba(66, 165, 245, 0.04) 100%)`,
-                        border: `1px solid ${item.borderColor}`,
-                        backdropFilter: "blur(10px)",
-                        transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
-                        position: "relative",
-                        overflow: "hidden",
-                        cursor: "pointer",
-                        display: "flex",
-                        flexDirection: "column",
-                        "&::before": {
-                          content: '""',
-                          position: "absolute",
-                          top: 0,
-                          left: 0,
-                          right: 0,
-                          height: "1px",
-                          background: `linear-gradient(90deg, transparent, ${item.color}80, transparent)`,
-                        },
-                        "&::after": {
-                          content: '""',
-                          position: "absolute",
-                          top: 0,
-                          left: 0,
-                          width: "100%",
-                          height: "100%",
-                          background: `linear-gradient(135deg, ${item.color}10 0%, transparent 100%)`,
-                          opacity: 0,
-                          transition: "opacity 0.4s ease",
-                          pointerEvents: "none",
-                        },
-                        "&:hover": {
-                          transform: "translateY(-12px)",
-                          borderColor: item.color,
-                          background: `linear-gradient(135deg, ${item.bgColor} 0%, ${item.bgColor} 100%)`,
-                          boxShadow: `0 24px 48px ${item.color}40, 0 0 80px ${item.color}20`,
-                          "&::after": {
-                            opacity: 1,
+          <Grid container spacing={{ xs: 2, md: 2.5 }}>
+            {
+              // Ensure a 3x3 layout: fill with placeholders if fewer than 9 items
+            }
+            {(() => {
+              const filled = [...segments];
+              while (filled.length < 9) filled.push(null);
+              return filled.map((item, index) => {
+                if (!item) {
+                  // Placeholder cell to keep 3x3 layout
+                  return (
+                    <Grid item xs={12} sm={6} md={4} key={index}>
+                      <motion.div variants={itemVariants}>
+                        <Box
+                          sx={{
+                            p: { xs: 2, md: 3 },
+                            borderRadius: "16px",
+                            border: "1px dashed rgba(255,255,255,0.04)",
+                            background: "transparent",
+                            minHeight: 120,
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            opacity: 0.06,
+                            pointerEvents: "none",
+                          }}
+                        />
+                      </motion.div>
+                    </Grid>
+                  );
+                }
+                const Icon = item.icon;
+                return (
+                  <Grid item xs={12} sm={6} md={4} key={index}>
+                    <motion.div variants={itemVariants}>
+                      <Box
+                        sx={{
+                          p: { xs: 2.5, md: 3 },
+                          borderRadius: "16px",
+                          background: `linear-gradient(135deg, ${item.bgColor} 0%, rgba(66, 165, 245, 0.04) 100%)`,
+                          border: `1px solid ${item.borderColor}`,
+                          backdropFilter: "blur(10px)",
+                          transition: "all 0.28s cubic-bezier(0.4, 0, 0.2, 1)",
+                          position: "relative",
+                          overflow: "hidden",
+                          cursor: "pointer",
+                          display: "flex",
+                          flexDirection: "column",
+                          alignItems: "flex-start",
+                          "&::before": {
+                            content: '""',
+                            position: "absolute",
+                            top: 0,
+                            left: 0,
+                            right: 0,
+                            height: "1px",
+                            background: `linear-gradient(90deg, transparent, ${item.color}80, transparent)`,
                           },
-                        },
-                      }}
-                    >
+                          "&::after": {
+                            content: '""',
+                            position: "absolute",
+                            top: 0,
+                            left: 0,
+                            width: "100%",
+                            height: "100%",
+                            background: `linear-gradient(135deg, ${item.color}10 0%, transparent 100%)`,
+                            opacity: 0,
+                            transition: "opacity 0.32s ease",
+                            pointerEvents: "none",
+                          },
+                          "&:hover": {
+                            transform: "translateY(-8px)",
+                            borderColor: item.color,
+                            background: `linear-gradient(135deg, ${item.bgColor} 0%, ${item.bgColor} 100%)`,
+                            boxShadow: `0 18px 36px ${item.color}30, 0 0 60px ${item.color}15`,
+                            "&::after": {
+                              opacity: 1,
+                            },
+                          },
+                        }}
+                      >
                       {/* Icon Container */}
                       <motion.div
                         whileHover={{ scale: 1.15, rotate: -5 }}
@@ -310,7 +339,7 @@ const BusinessSegments = () => {
                       {/* Title */}
                       <Typography
                         sx={{
-                          fontSize: { xs: "16px", md: "18px" },
+                          fontSize: { xs: "15px", md: "17px" },
                           fontWeight: 700,
                           color: "white",
                           mb: 1.5,
@@ -323,11 +352,10 @@ const BusinessSegments = () => {
                       {/* Description */}
                       <Typography
                         sx={{
-                          fontSize: { xs: "13px", md: "14px" },
+                          fontSize: { xs: "13px", md: "13.5px" },
                           color: "#cbd5e1",
                           lineHeight: 1.6,
-                          mb: 3,
-                          flex: 1,
+                          mb: 2.5,
                         }}
                       >
                         {item.desc}
