@@ -406,7 +406,8 @@ const BusinessSegments = () => {
                   </motion.div>
                 </Grid>
               );
-            })}
+            });
+            })()}
           </Grid>
         </motion.div>
 
