@@ -242,7 +242,7 @@ const BusinessSegments = () => {
                 if (!item) {
                   // Placeholder cell to keep 3x3 layout
                   return (
-                    <Grid item xs={12} sm={6} md={4} key={index}>
+                    <Grid item xs={12} sm={6} md={4} key={index} sx={{ display: 'flex' }}>
                       <motion.div variants={itemVariants}>
                         <Box
                           sx={{
@@ -250,12 +250,13 @@ const BusinessSegments = () => {
                             borderRadius: "16px",
                             border: "1px dashed rgba(255,255,255,0.04)",
                             background: "transparent",
-                            minHeight: 120,
+                            minHeight: { xs: 150, md: 180 },
                             display: "flex",
                             alignItems: "center",
                             justifyContent: "center",
                             opacity: 0.06,
                             pointerEvents: "none",
+                            flex: 1,
                           }}
                         />
                       </motion.div>
@@ -264,7 +265,7 @@ const BusinessSegments = () => {
                 }
                 const Icon = item.icon;
                 return (
-                  <Grid item xs={12} sm={6} md={4} key={index}>
+                  <Grid item xs={12} sm={6} md={4} key={index} sx={{ display: 'flex' }}>
                     <motion.div variants={itemVariants}>
                       <Box
                         sx={{
@@ -280,6 +281,8 @@ const BusinessSegments = () => {
                           display: "flex",
                           flexDirection: "column",
                           alignItems: "flex-start",
+                          flex: 1,
+                          minHeight: { xs: 150, md: 180 },
                           "&::before": {
                             content: '""',
                             position: "absolute",
