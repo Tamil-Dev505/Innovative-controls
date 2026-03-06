@@ -104,9 +104,7 @@ const Footer = () => {
                   <Box sx={{ backgroundColor: '#ffffff', borderRadius: '8px', px: 1.5, py: 0.5, display: 'inline-flex', width: 'fit-content' }}>
                     <Box component="img" src="/logo.png" alt="Innovative Controls" sx={{ width: { xs: '140px', md: '220px' }, display: 'block' }} />
                   </Box>
-                  <Typography sx={{ color: "#D1D5DB", fontSize: "1rem" }}>
-                    Delivering intelligent automation, AI-driven systems, and energy management solutions.
-                  </Typography>
+                 
                 </MotionBox>
               </Grid>
             </Grid>
