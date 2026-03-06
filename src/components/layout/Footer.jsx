@@ -101,7 +101,9 @@ const Footer = () => {
             <Grid container spacing={{ xs: 2, md: 2 }} sx={{ mb: 1.5, width: "100%" }} alignItems="center">
               <Grid item xs={12} md={12} sx={{ px: { xs: 2, md: 6 } }}>
                 <MotionBox variants={itemVariants} sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
-                  <Box component="img" src="/logo.png" alt="Innovative Controls" sx={{ width: { xs: '140px', md: '220px' }, mb: 0 }} />
+                  <Box sx={{ backgroundColor: '#ffffff', borderRadius: '8px', px: 1.5, py: 0.5, display: 'inline-flex', width: 'fit-content' }}>
+                    <Box component="img" src="/logo.png" alt="Innovative Controls" sx={{ width: { xs: '140px', md: '220px' }, display: 'block' }} />
+                  </Box>
                   <Typography sx={{ color: "#D1D5DB", fontSize: "1rem" }}>
                     Delivering intelligent automation, AI-driven systems, and energy management solutions.
                   </Typography>
@@ -200,12 +202,12 @@ const Footer = () => {
 
           <Divider sx={{ background: "rgba(255, 255, 255, 0.08)", my: 3 }} />
 
-          <MotionBox variants={itemVariants} sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 1 }}>
+          <MotionBox variants={itemVariants} sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexDirection: { xs: "column", md: "row" }, flexWrap: "wrap", gap: { xs: 2, md: 1 }, textAlign: { xs: "center", md: "left" } }}>
             <Typography sx={{ opacity: 0.7, fontSize: "0.9rem", color: "#9CA3AF" }}>
               © {new Date().getFullYear()} Innovative Controls. All Rights Reserved.
             </Typography>
 
-            <Box sx={{ display: "flex", gap: 4, flexWrap: "wrap" }}>
+            <Box sx={{ display: "flex", gap: { xs: 2, md: 4 }, flexWrap: "wrap", justifyContent: "center" }}>
               { ["Privacy Policy", "Terms of Service", "Cookie Policy"].map((link) => (
                 <Link
                   key={link}
@@ -217,6 +219,13 @@ const Footer = () => {
               ))}
             </Box>
           </MotionBox>
+
+          <Typography sx={{ textAlign: "center", mt: 2, fontSize: "0.85rem", color: "#6B7280" }}>
+            Designed by{" "}
+            <Link href="https://apexinfo.co.in/" target="_blank" rel="noopener noreferrer" sx={{ color: "#60A5FA", textDecoration: "none", fontWeight: 600, "&:hover": { color: "#3B82F6" } }}>
+              Apex Infosys Solutions
+            </Link>
+          </Typography>
         </motion.div>
       </Container>
     </Box>

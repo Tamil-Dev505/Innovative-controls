@@ -28,8 +28,8 @@ const TopBar = () => {
           display: "flex",
           justifyContent: isMobile ? "center" : "space-around",
           alignItems: "center",
-          gap: isMobile ? 2 : 4,
-          flexWrap: isMobile ? "wrap" : "nowrap",
+          gap: isMobile ? 1.5 : 4,
+          flexWrap: "wrap",
           maxWidth: "1400px",
           mx: "auto",
         }}
@@ -43,7 +43,7 @@ const TopBar = () => {
                 display: "flex",
                 alignItems: "center",
                 gap: 1,
-                fontSize: isMobile ? "12px" : "13px",
+                fontSize: isMobile ? "11px" : "13px",
                 transition: "all 0.3s ease",
                 cursor: "pointer",
                 "&:hover": {
@@ -53,8 +53,8 @@ const TopBar = () => {
               }}
               aria-label={item.ariaLabel}
             >
-              <Icon size={isMobile ? 16 : 18} strokeWidth={1.5} />
-              <span>{isMobile && index > 0 ? item.label.split(" ")[0] : item.label}</span>
+              <Icon size={isMobile ? 14 : 18} strokeWidth={1.5} />
+              <span style={{ whiteSpace: "nowrap" }}>{item.label}</span>
             </Box>
           );
         })}

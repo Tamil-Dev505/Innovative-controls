@@ -70,7 +70,7 @@ const ContactSection = () => {
   return (
     <Box
       sx={{
-        py: { xs: 10, md: 16 },
+        py: { xs: 5, md: 16 },
         px: 2,
         background: "linear-gradient(135deg, #F9FAFB 0%, #F3F4F6 100%)",
         position: "relative",
@@ -102,8 +102,8 @@ const ContactSection = () => {
           position: "absolute",
           top: "10%",
           right: "5%",
-          width: "300px",
-          height: "300px",
+          width: { xs: "150px", md: "300px" },
+          height: { xs: "150px", md: "300px" },
           background: "radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%)",
           borderRadius: "50%",
           filter: "blur(40px)",
@@ -127,8 +127,8 @@ const ContactSection = () => {
           position: "absolute",
           bottom: "5%",
           left: "10%",
-          width: "250px",
-          height: "250px",
+          width: { xs: "120px", md: "250px" },
+          height: { xs: "120px", md: "250px" },
           background: "radial-gradient(circle, rgba(37, 99, 235, 0.1) 0%, transparent 70%)",
           borderRadius: "50%",
           filter: "blur(50px)",
@@ -145,7 +145,7 @@ const ContactSection = () => {
           viewport={{ once: true, amount: 0.2 }}
         >
           {/* Section Header */}
-          <MotionBox variants={itemVariants} sx={{ textAlign: "center", mb: 10 }}>
+          <MotionBox variants={itemVariants} sx={{ textAlign: "center", mb: { xs: 5, md: 10 } }}>
             <Box
               sx={{
                 display: "inline-block",
@@ -545,7 +545,7 @@ const ContactSection = () => {
           <MotionBox
             variants={itemVariants}
             sx={{
-              mt: 12,
+              mt: { xs: 6, md: 12 },
               borderRadius: "24px",
               overflow: "hidden",
               boxShadow: "0 20px 60px rgba(0, 0, 0, 0.1)",
@@ -554,7 +554,7 @@ const ContactSection = () => {
             <iframe
               title="Company Location - Coimbatore"
               width="100%"
-              height="400"
+              height="300"
               style={{ border: 0, display: "block" }}
               loading="lazy"
               allowFullScreen

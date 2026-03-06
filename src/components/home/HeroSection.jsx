@@ -88,7 +88,7 @@ const HeroSection = () => {
           textAlign: "center",
           color: "white",
           maxWidth: isMobile ? "90%" : "900px",
-          px: isMobile ? 2 : 4,
+          padding: isMobile ? "0 16px" : "0 32px",
         }}
       >
         {/* Badge */}

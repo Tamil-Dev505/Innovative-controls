@@ -49,7 +49,7 @@ const IndustrySectionV2 = () => {
   return (
     <Box
       sx={{
-        py: { xs: 8, md: 14 },
+        py: { xs: 5, md: 14 },
         px: { xs: 2, md: 6 },
         background: "linear-gradient(135deg, #F8FAFC 0%, #F0F4F8 100%)",
         position: "relative",

@@ -126,7 +126,7 @@ const Navbar = () => {
             }}
           >
             {/* Logo */}
-            <Box sx={{ flexShrink: 0 }}>
+            <Box sx={{ flexShrink: 0, backgroundColor: '#ffffff', borderRadius: '8px', px: 1.5, py: 0.5 }}>
               <img
                 src={logo}
                 alt="Innovative Controls Logo"
@@ -225,7 +225,9 @@ const Navbar = () => {
             px: 2,
           }}
         >
-          <img src={logo} alt="Innovative Controls Logo" height={42} />
+          <Box sx={{ backgroundColor: '#ffffff', borderRadius: '8px', px: 1.5, py: 0.5, display: 'inline-flex' }}>
+            <img src={logo} alt="Innovative Controls Logo" height={42} style={{ display: 'block' }} />
+          </Box>
           <IconButton
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             sx={{ color: "white" }}

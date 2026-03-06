@@ -56,7 +56,7 @@ const StatsSection = () => {
   return (
     <Box
       sx={{
-        py: { xs: 8, md: 14 },
+        py: { xs: 5, md: 14 },
         px: { xs: 2, md: 4 },
         background: "linear-gradient(135deg, #0B1220 0%, #111827 100%)",
         position: "relative",
